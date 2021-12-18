@@ -17,13 +17,5 @@ $.ajax(settings).done(function (response) {
 	console.log(details);
 	newPageTitle = details.name + ' - Tripocity';
 	document.title = newPageTitle;
-
-	$('.des').append(details.description);
-	$('.title').append(details.name+" - "+ details.entityPresentationInfo.entityTypeHints[0]);
-	$('.seemore').html('<a href='+ details.webSearchUrl +' target="_blank" >See more...</a>');
-	var image = document.createElement("IMG");
-	image.alt = details.image.name;
-	image.setAttribute('class', 'photo');
-	image.src=  details.image.hostPageUrl;
-	$('.image').html(image);
+	$('.details').html("<div class=\"card shadow mb-4\"><div class=\"card-header py-3\"><h6 class=\"m-0 font-weight-bold text-primary title\">"+details.name+" - "+ details.entityPresentationInfo.entityTypeHints[0]+"</h6></div><div class=\"card image\"><img alt="+details.image.name+" class=\"photo\" src=\""+details.image.hostPageUrl+"\"></img></div><div class=\"card-body des right\">"+details.description+ " <a href="+ details.webSearchUrl +" target=\"_blank\" >See more...</a></div></div>");
 });
