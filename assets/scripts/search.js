@@ -1,6 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('q');
 
+const key1 = "1d82552864msh6a14411ff94c93fp13610bjsnd4f6846c004c";
+const key2 = "71b0ecda23mshd3f1fc8ebcc7ce8p1d96aajsn3ea2dc905f77";
+
 const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -9,7 +12,7 @@ const settings = {
 	"headers": {
 		"x-bingapis-sdk": "true",
 		"x-rapidapi-host": "bing-entity-search.p.rapidapi.com",
-		"x-rapidapi-key": "1d82552864msh6a14411ff94c93fp13610bjsnd4f6846c004c"
+		"x-rapidapi-key": key2
 	}
 };
 
@@ -28,7 +31,7 @@ else{
 			console.log(details);
 			newPageTitle = details.name + ' - Tripocity';
 			document.title = newPageTitle;
-			$('.details').html("<link href=\"assets/css/sb-admin-2.min.css\" rel=\"stylesheet\"> <link rel=\"stylesheet\" href=\"assets/css/location.css\"> <div class=\"card shadow mb-4\"><div class=\"card-header py-3\"><h6 class=\"m-0 font-weight-bold text-primary title\">"+details.name+" - "+ details.entityPresentationInfo.entityTypeHints[0]+"</h6></div><div class=\"card image\"><img alt="+details.image.name+" class=\"photo\" src=\""+details.image.hostPageUrl+"\"></img></div><div class=\"card-body des right\">"+details.description+ " <a href="+ details.webSearchUrl +" target=\"_blank\" >See more...</a></div></div>");
+			$('.details').html("<link href=\"assets/css/sb-admin-2.min.css\" rel=\"stylesheet\"> <link rel=\"stylesheet\" href=\"assets/css/location.css\"> <div class=\"container mb-4\"><div class=\"card-header py-3\"><h3 class=\"m-0 font-weight-bold text-primary title\">"+details.name+" - "+ details.entityPresentationInfo.entityTypeHints[0]+"</h3> </div> <br> <img alt="+details.image.name+" class=\"photo\" src=\""+details.image.hostPageUrl+"\"></img> <h5>"+details.description+ " <a href="+ details.webSearchUrl +" target=\"_blank\" >See more...</a></h5></div>");
 		}
 	});
 }
