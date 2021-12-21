@@ -18,7 +18,7 @@ const settings = {
 
 const error_message = "<link rel=\"stylesheet\" id=\"main-stylesheet\" data-version=\"1.1.0\" href=\"assets/css/shards-dashboards.1.1.0.min.css\"> <div class=\"error__content\" style=\"position:absolute;top:20%;left:15%;width:70%;\"> <h2>500</h2> <h3>Something went wrong!</h3> <p>Try searching for another close one.</p> <button type=\"button\" class=\"btn btn-accent btn-pill\" onClick=\"window.location.assign('/index.html')\">&larr; Go Back</button> </div>"
 
-if (myParam == null || myParam == '' || myParam.length = 1) {
+if (myParam == null || myParam == '' || myParam.length == 1) {
 	$('.details').html(error_message);
 }
 else{
